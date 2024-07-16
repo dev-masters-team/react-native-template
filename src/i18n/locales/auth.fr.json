@@ -1,0 +1,14 @@
+{
+  "ERROR_USER_NOT_FOUND": "Utilisateur non trouvé",
+  "ERROR_INVALID_CREDENTIALS": "Nom d'utilisateur ou mot de passe incorrect",
+  "Sign up": "S'inscrire",
+  "Log in": "Se connecter",
+  "Password": "Mot de passe",
+  "Please input your email": "Veuillez saisir votre e-mail",
+  "Please input your password": "Veuillez saisir votre mot de passe",
+  "The format of the email does not comply": "Le format du mail n'est pas conforme",
+  "Secure your connections with Secure & Access": "Sécuriser votre connection avec Secure & Access",
+  "Open Secure & Access": "Ouvrir Secure & Access",
+  "Your session has expired": "Votre session a expiré",
+  "Please log in again": "Veuillez vous reconnecter"
+}
