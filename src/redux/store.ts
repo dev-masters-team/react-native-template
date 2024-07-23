@@ -9,10 +9,10 @@ import { enableMapSet } from 'immer'
 import { persistReducer, persistStore } from 'redux-persist'
 import authReducer, {
   initialState as authInitialState,
-} from './redux/authSlice'
+} from './auth/authSlice'
 import appReducer, {
   initialState as appInitialState,
-} from './redux/appSlice'
+} from './appSlice'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
 enableMapSet()

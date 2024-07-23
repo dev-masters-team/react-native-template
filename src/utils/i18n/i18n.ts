@@ -4,8 +4,8 @@ import * as RNLocalize from 'react-native-localize'
 
 import authEN from './locales/auth.en.json'
 import authFR from './locales/auth.fr.json'
-import { RootState, store } from '../store'
-import { updateLanguage } from '../redux/appSlice'
+import { RootState, store } from '../../redux/store'
+import { updateLanguage } from '../../redux/appSlice'
 
 export const resources = {
   en: {
