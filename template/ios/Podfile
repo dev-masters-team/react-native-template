@@ -17,6 +17,9 @@ end
 target 'rnTemplate' do
   config = use_native_modules!
 
+  # For extensions without React dependencies
+  pod 'react-native-config/Extension', :path => '../node_modules/react-native-config'
+
   use_react_native!(
     :path => config[:reactNativePath],
     # An absolute path to your application root.
