@@ -3,7 +3,10 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android": "react-native run-android",
+    "android:local": "npx react-native run-android --mode=localDebug && react-native start --experimental-debugger",
+    "android:dev": "npx react-native run-android --mode=devDebug && react-native start --experimental-debugger",
+    "android:stage": "npx react-native run-android --mode=stageDebug && react-native start --experimental-debugger",
+    "android:prod": "npx react-native run-android --mode=prodDebug && react-native start --experimental-debugger",
     "ios:prod": "npx react-native run-ios --scheme=prod --mode Release",
     "ios:stage": "npx react-native run-ios --scheme=stage --mode Release",
     "ios:dev": "npx react-native run-ios --scheme=dev",
