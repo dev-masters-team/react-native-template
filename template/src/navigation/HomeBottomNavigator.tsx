@@ -11,6 +11,7 @@ import Template, { TemplateProps } from '../screens/Template'
 import Settings from '../screens/Settings/Settings'
 import { objectEntries } from '../utils/typescriptTools'
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs'
+import { useThemeContext } from '../utils/theme/ThemeProvider'
 
 type ParamList = {
   HomeTab: TemplateProps
@@ -54,7 +55,7 @@ const elements: TabElements = {
 }
 
 export default function HomeBottomNavigator() {
-  // const { theme } = useThemeContext()
+  const { theme } = useThemeContext()
   const insets = useSafeAreaInsets()
 
   return (
@@ -69,6 +70,9 @@ export default function HomeBottomNavigator() {
           paddingRight: insets.right,
         }}
         screenOptions={({ route }) => ({
+          tabBarStyle: [
+            theme.externalPackages.reactNativeScreens.topTabBarStyle,
+          ],
           tabBarPressColor: 'transparent',
           tabBarIndicatorStyle: {
             backgroundColor: 'transparent',
@@ -77,6 +81,7 @@ export default function HomeBottomNavigator() {
             <View style={styles.tabBar}>
               <Text
                 allowFontScaling={false}
+                style={[styles.tabBarLabel, theme.typography.default]}
               >
                 {elements[route.name].label}
               </Text>
@@ -87,6 +92,7 @@ export default function HomeBottomNavigator() {
               name={
                 focused ? elements[route.name].iconFocused : elements[route.name].icon
               }
+              color={theme.colors.default.color}
               size={25}
             />
           ),
@@ -111,4 +117,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     width: 80,
   },
+  tabBarLabel: {
+    fontSize: 12,
+  }
 })

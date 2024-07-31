@@ -3,12 +3,20 @@ import { jwtDecode, JwtPayload } from 'jwt-decode'
 import Config from 'react-native-config'
 
 
-interface State {
-  lang: string
+export enum THEME_ID {
+  AS_DEVICE = 'AS_DEVICE',
+  LIGHT = 'LIGHT',
+  DARK = 'DARK',
 }
 
-export const initialState: Partial<State> = {}
+interface State {
+  lang?: string
+  themeId: THEME_ID
+}
 
+export const initialState: State = {
+  themeId: THEME_ID.AS_DEVICE,
+}
 
 export const updateLanguage = createAsyncThunk(
   'account/updateLanguage',
@@ -24,6 +32,9 @@ export const appSlice = createSlice({
   name: 'app',
   initialState,
   reducers: {
+    setUserSelectedTheme(state, { payload }: PayloadAction<THEME_ID>) {
+      state.themeId = payload
+    },
   },
   extraReducers: (builder) => {
     
