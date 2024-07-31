@@ -10,29 +10,13 @@
             ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
             <ActionContent
                title = "Run Script"
-               scriptText = "# Type a script or drag a script file from your workspace to insert its path.&#10;rm &quot;${CONFIGURATION_BUILD_DIR}/${INFOPLIST_PATH}&quot;&#10;echo &quot;.env.local&quot; &gt; /tmp/envfile&#10;">
+               scriptText = "echo &quot;.env.local&quot; &gt; /tmp/envfile&#10;">
                <EnvironmentBuildable>
                   <BuildableReference
                      BuildableIdentifier = "primary"
-                     BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-                     BuildableName = "rnTemplate.app"
-                     BlueprintName = "rnTemplate"
-                     ReferencedContainer = "container:rnTemplate.xcodeproj">
-                  </BuildableReference>
-               </EnvironmentBuildable>
-            </ActionContent>
-         </ExecutionAction>
-         <ExecutionAction
-            ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
-            <ActionContent
-               title = "Run Script"
-               scriptText = "# Type a script or drag a script file from your workspace to insert its path.&#10;&quot;${SRCROOT}/../node_modules/react-native-config/ios/ReactNativeConfig/BuildXCConfig.rb&quot; &quot;${SRCROOT}/..&quot; &quot;${SRCROOT}/tmp.xcconfig&quot;&#10;">
-               <EnvironmentBuildable>
-                  <BuildableReference
-                     BuildableIdentifier = "primary"
-                     BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-                     BuildableName = "rnTemplate.app"
-                     BlueprintName = "rnTemplate"
+                     BlueprintIdentifier = "DFE079872C59B603007AC66F"
+                     BuildableName = "rnTemplateDev.app"
+                     BlueprintName = "rnTemplateDev"
                      ReferencedContainer = "container:rnTemplate.xcodeproj">
                   </BuildableReference>
                </EnvironmentBuildable>
@@ -48,10 +32,24 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "rnTemplate.app"
-               BlueprintName = "rnTemplate"
+               BlueprintIdentifier = "DFE079872C59B603007AC66F"
+               BuildableName = "rnTemplateDev.app"
+               BlueprintName = "rnTemplateDev"
                ReferencedContainer = "container:rnTemplate.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "1BEE828C124E6416179B904A9F66D794"
+               BuildableName = "React"
+               BlueprintName = "React"
+               ReferencedContainer = "container:Pods/Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -88,9 +86,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "rnTemplate.app"
-            BlueprintName = "rnTemplate"
+            BlueprintIdentifier = "DFE079872C59B603007AC66F"
+            BuildableName = "rnTemplateDev.app"
+            BlueprintName = "rnTemplateDev"
             ReferencedContainer = "container:rnTemplate.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -105,9 +103,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "rnTemplate.app"
-            BlueprintName = "rnTemplate"
+            BlueprintIdentifier = "DFE079872C59B603007AC66F"
+            BuildableName = "rnTemplateDev.app"
+            BlueprintName = "rnTemplateDev"
             ReferencedContainer = "container:rnTemplate.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

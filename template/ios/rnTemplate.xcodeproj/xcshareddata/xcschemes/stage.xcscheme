@@ -1,38 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1210"
+   LastUpgradeVersion = "1540"
    version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
-      buildImplicitDependencies = "YES">
+      buildImplicitDependencies = "YES"
+      buildArchitectures = "Automatic">
       <PreActions>
          <ExecutionAction
             ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
             <ActionContent
                title = "Run Script"
-               scriptText = "# Type a script or drag a script file from your workspace to insert its path.&#10;rm &quot;${CONFIGURATION_BUILD_DIR}/${INFOPLIST_PATH}&quot;&#10;echo &quot;.env.stage&quot; &gt; /tmp/envfile&#10;">
+               scriptText = "echo &quot;.env.stage&quot; &gt; /tmp/envfile&#10;">
                <EnvironmentBuildable>
                   <BuildableReference
                      BuildableIdentifier = "primary"
-                     BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-                     BuildableName = "rnTemplate.app"
-                     BlueprintName = "rnTemplate"
-                     ReferencedContainer = "container:rnTemplate.xcodeproj">
-                  </BuildableReference>
-               </EnvironmentBuildable>
-            </ActionContent>
-         </ExecutionAction>
-         <ExecutionAction
-            ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
-            <ActionContent
-               title = "Run Script"
-               scriptText = "# Type a script or drag a script file from your workspace to insert its path.&#10;&quot;${SRCROOT}/../node_modules/react-native-config/ios/ReactNativeConfig/BuildXCConfig.rb&quot; &quot;${SRCROOT}/..&quot; &quot;${SRCROOT}/tmp.xcconfig&quot;&#10;">
-               <EnvironmentBuildable>
-                  <BuildableReference
-                     BuildableIdentifier = "primary"
-                     BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-                     BuildableName = "rnTemplate.app"
-                     BlueprintName = "rnTemplate"
+                     BlueprintIdentifier = "DFE0799B2C5A4337007AC66F"
+                     BuildableName = "rnTemplateStage.app"
+                     BlueprintName = "rnTemplateStage"
                      ReferencedContainer = "container:rnTemplate.xcodeproj">
                   </BuildableReference>
                </EnvironmentBuildable>
@@ -48,10 +33,24 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "rnTemplate.app"
-               BlueprintName = "rnTemplate"
+               BlueprintIdentifier = "DFE0799B2C5A4337007AC66F"
+               BuildableName = "rnTemplateStage.app"
+               BlueprintName = "rnTemplateStage"
                ReferencedContainer = "container:rnTemplate.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "1BEE828C124E6416179B904A9F66D794"
+               BuildableName = "React"
+               BlueprintName = "React"
+               ReferencedContainer = "container:Pods/Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -60,19 +59,8 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
-      <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "rnTemplateTests.xctest"
-               BlueprintName = "rnTemplateTests"
-               ReferencedContainer = "container:rnTemplate.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-      </Testables>
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      shouldAutocreateTestPlan = "YES">
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -88,9 +76,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "rnTemplate.app"
-            BlueprintName = "rnTemplate"
+            BlueprintIdentifier = "DFE0799B2C5A4337007AC66F"
+            BuildableName = "rnTemplateStage.app"
+            BlueprintName = "rnTemplateStage"
             ReferencedContainer = "container:rnTemplate.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -105,9 +93,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "rnTemplate.app"
-            BlueprintName = "rnTemplate"
+            BlueprintIdentifier = "DFE0799B2C5A4337007AC66F"
+            BuildableName = "rnTemplateStage.app"
+            BlueprintName = "rnTemplateStage"
             ReferencedContainer = "container:rnTemplate.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

@@ -14,8 +14,23 @@ if linkage != nil
   use_frameworks! :linkage => linkage.to_sym
 end
 
-target 'rnTemplate' do
+abstract_target 'devMasters' do
   config = use_native_modules!
+
+  target 'rnTemplate' do
+    #Production-specific pods
+    target 'rnTemplateTests' do
+      inherit! :complete
+      # Pods for testing
+    end
+  end
+
+  target 'rnTemplateDev' do
+  end
+
+  target 'rnTemplateStage' do
+  end
+
 
   # For extensions without React dependencies
   pod 'react-native-config/Extension', :path => '../node_modules/react-native-config'
@@ -25,11 +40,6 @@ target 'rnTemplate' do
     # An absolute path to your application root.
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
-
-  target 'rnTemplateTests' do
-    inherit! :complete
-    # Pods for testing
-  end
 
   post_install do |installer|
     # https://github.com/facebook/react-native/blob/main/packages/react-native/scripts/react_native_pods.rb#L197-L202
