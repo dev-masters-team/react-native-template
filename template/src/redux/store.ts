@@ -26,7 +26,7 @@ const persistConfig = {
   key: 'root',
   storage: AsyncStorage,
   whiteList: ['auth', 'app'],
-  blacklist: [],
+  // blacklist: [],
 }
 
 const combinedReducer = combineReducers(reducers)

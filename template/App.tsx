@@ -6,6 +6,8 @@ import { persistor, store } from './src/redux/store'
 import RootNavigator from './src/navigation/RootNavigator'
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
+import Toast from 'react-native-toast-message'
+import { ThemeProvider } from './src/utils/theme/ThemeProvider'
 // import 'react-native-get-random-values'
 
 export default function App() {
@@ -14,13 +16,14 @@ export default function App() {
     <StoreProvider store={store}>
       <PersistGate persistor={persistor}>
         <GestureHandlerRootView style={{ flex: 1 }}>
-          {/* <ThemeProvider> */}
+          <ThemeProvider>
             <SafeAreaProvider>
               <SafeAreaView style={{ flex: 1 }} edges={[]}>
                 <RootNavigator />
+                <Toast /* config={toastConfig} */ />
               </SafeAreaView>
             </SafeAreaProvider>
-          {/* </ThemeProvider> */}
+          </ThemeProvider>
         </GestureHandlerRootView>
       </PersistGate>
     </StoreProvider>
