@@ -3,13 +3,14 @@ import {
 } from '@react-navigation/bottom-tabs'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
-import { StyleSheet, Text, View } from 'react-native'
+import { ActivityIndicator, StyleSheet, Text, View } from 'react-native'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import { NavigationProp, ParamListBase, RouteProp } from '@react-navigation/native'
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context'
 import Template, { TemplateProps } from '../screens/Template'
 import Settings from '../screens/Settings/Settings'
 import { objectEntries } from '../utils/typescriptTools'
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs'
 
 type ParamList = {
   HomeTab: TemplateProps
@@ -18,13 +19,13 @@ type ParamList = {
 }
 
 export type BottomNavigation = NavigationProp<ParamList>
-const BottomStack = createBottomTabNavigator<ParamList>()
+const BottomStack = createMaterialTopTabNavigator<ParamList>()
 
 type TabElements = Record<
   keyof ParamList,
   {
     icon: string
-    iconSelected: string
+    iconFocused: string
     component: React.ComponentType<any>
     label: string
   }
@@ -33,19 +34,19 @@ type TabElements = Record<
 const elements: TabElements = {
   HomeTab: {
     icon: 'home-outline',
-    iconSelected: 'home-sharp',
+    iconFocused: 'home-sharp',
     component: Template,
     label: 'Home',
   },
   SearchTab: {
     icon: 'search-outline',
-    iconSelected: 'search-sharp',
+    iconFocused: 'search-sharp',
     component: Template,
     label: 'Search',
   },
   SettingsTab: {
     icon: 'settings-outline',
-    iconSelected: 'settings-sharp',
+    iconFocused: 'settings-sharp',
     component: Settings,
     label: 'Settings',
   },
@@ -53,7 +54,6 @@ const elements: TabElements = {
 }
 
 export default function HomeBottomNavigator() {
-  const { t } = useTranslation('common')
   // const { theme } = useThemeContext()
   const insets = useSafeAreaInsets()
 
@@ -61,6 +61,13 @@ export default function HomeBottomNavigator() {
     <SafeAreaProvider>
       <BottomStack.Navigator
         initialRouteName="HomeTab"
+        tabBarPosition="bottom"
+        style={{
+          //paddingTop: insets.top,
+          paddingBottom: insets.bottom / 2,
+          paddingLeft: insets.left,
+          paddingRight: insets.right,
+        }}
         screenOptions={({ route }) => ({
           tabBarPressColor: 'transparent',
           tabBarIndicatorStyle: {
@@ -78,11 +85,12 @@ export default function HomeBottomNavigator() {
           tabBarIcon: ({ focused }) => (
             <Ionicons
               name={
-                focused ? elements[route.name].iconSelected : elements[route.name].icon
+                focused ? elements[route.name].iconFocused : elements[route.name].icon
               }
               size={25}
             />
           ),
+          lazyPlaceholder: () => <ActivityIndicator />,
         })}
       >
         {objectEntries(elements).map(([routeName, config]) => (

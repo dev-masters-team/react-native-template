@@ -5,6 +5,7 @@ import { PersistGate } from 'redux-persist/integration/react'
 import { persistor, store } from './src/redux/store'
 import RootNavigator from './src/navigation/RootNavigator'
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context'
+import { GestureHandlerRootView } from 'react-native-gesture-handler'
 // import 'react-native-get-random-values'
 
 export default function App() {
@@ -12,13 +13,15 @@ export default function App() {
   return (
     <StoreProvider store={store}>
       <PersistGate persistor={persistor}>
-        {/* <ThemeProvider> */}
-          <SafeAreaProvider>
-            <SafeAreaView style={{ flex: 1 }} edges={[]}>
-              <RootNavigator />
-            </SafeAreaView>
-          </SafeAreaProvider>
-        {/* </ThemeProvider> */}
+        <GestureHandlerRootView style={{ flex: 1 }}>
+          {/* <ThemeProvider> */}
+            <SafeAreaProvider>
+              <SafeAreaView style={{ flex: 1 }} edges={[]}>
+                <RootNavigator />
+              </SafeAreaView>
+            </SafeAreaProvider>
+          {/* </ThemeProvider> */}
+        </GestureHandlerRootView>
       </PersistGate>
     </StoreProvider>
   )
