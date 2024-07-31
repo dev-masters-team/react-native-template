@@ -5,6 +5,6 @@ This is an template to quick start an React Native Application with preset packa
 
 #TODO: Android:
 1. env configuration
-2. app icon
-4. 3 targets
-3. React Native Vector Icons
+2. 3 targets 
+3. app icon
+4. React Native Vector Icons
