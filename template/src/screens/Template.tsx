@@ -7,6 +7,7 @@ import Toast from 'react-native-toast-message'
 import { useTranslation } from 'react-i18next'
 import { useThemeContext } from '../utils/theme/ThemeProvider'
 import { useAppSelector } from '../utils/hooks/reduxHooks'
+import Config from 'react-native-config'
 export interface TemplateProps {
   name?: string
 }
@@ -31,6 +32,8 @@ export default function Template({name}: TemplateProps) {
       </LongPressWithScale>
       <Icon name="rocket" size={30} color="#900" />
       <Text>Template screen {name}</Text>
+      <Text>env (APP_SCHEMA_EXAMPLE) - {Config.APP_SCHEMA_EXAMPLE}</Text>
+
     </View>
   )
 }
