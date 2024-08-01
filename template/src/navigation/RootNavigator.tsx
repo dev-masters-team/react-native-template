@@ -7,6 +7,7 @@ import TemplateScreen from '../screens/Template'
 import { useAppSelector } from '../utils/hooks/reduxHooks'
 import WelcomeNavigator from './WelcomeNavigator'
 import HomeBottomNavigator from './HomeBottomNavigator'
+import { useThemeContext } from '../utils/theme/ThemeProvider'
 
 
 export type RootParamList = {
@@ -27,7 +28,10 @@ export default function RootNavigator(): React.JSX.Element {
 
   return (
       <NavigationContainer onReady={BootSplash.hide}>
-        <RootStack.Navigator>
+        <RootStack.Navigator screenOptions={{
+            headerShown: false,
+          }}
+        >
           {!jwt ? (
             <RootStack.Screen
               name="WelcomeNavigator"

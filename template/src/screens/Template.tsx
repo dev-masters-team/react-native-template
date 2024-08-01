@@ -20,8 +20,7 @@ export default function Template({name}: TemplateProps) {
   // }, [theme])
   return (
     <View style={[styles.container, theme.secondaryBackground]}>
-      <LongPressWithScale onLongPress={() => 
-        Toast.show({
+      <LongPressWithScale onLongPress={() => Toast.show({
           type: 'success',
           text1: t('Гав'),
           text2: t('Я собака бобака'),

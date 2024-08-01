@@ -59,7 +59,6 @@ export default function HomeBottomNavigator() {
   const insets = useSafeAreaInsets()
 
   return (
-    <SafeAreaProvider>
       <BottomStack.Navigator
         initialRouteName="HomeTab"
         tabBarPosition="bottom"
@@ -70,8 +69,12 @@ export default function HomeBottomNavigator() {
           paddingRight: insets.right,
         }}
         screenOptions={({ route }) => ({
+          // tabBarStyle: [
+          //   theme.externalPackages.reactNativeScreens.topTabBarStyle,
+          // ],
           tabBarStyle: [
             theme.externalPackages.reactNativeScreens.topTabBarStyle,
+            // theme.borderWidthTransparent,
           ],
           tabBarPressColor: 'transparent',
           tabBarIndicatorStyle: {
@@ -107,7 +110,6 @@ export default function HomeBottomNavigator() {
           />
         ))}
       </BottomStack.Navigator>
-    </SafeAreaProvider>
   )
 }
 

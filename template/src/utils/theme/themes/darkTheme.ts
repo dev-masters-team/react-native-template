@@ -27,13 +27,16 @@ const style = StyleSheet.create({
   secondaryBackground: {
     backgroundColor: PALLETTE.neutral800,
   },
+  secondaryDarkerBackground: {
+    backgroundColor: PALLETTE.neutral900,
+  },
 })
 
 const externalPackages: ExternalPackagesInterface = {
   reactNativeScreens: {
     screenProps: 'light',
     topTabBarStyle: {
-      backgroundColor: style.secondaryBackground.backgroundColor,
+      backgroundColor: style.secondaryDarkerBackground.backgroundColor,
     },
   },
   toast: {
