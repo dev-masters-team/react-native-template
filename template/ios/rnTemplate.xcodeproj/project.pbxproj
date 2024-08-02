@@ -14,10 +14,13 @@
 		1E7140123DCC46878DBEAF5D /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 96FF10C541D756909EB297C6 /* PrivacyInfo.xcprivacy */; };
 		4358582423EE8A62A34AACD2 /* libPods-devMasters-rnTemplateStage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CC278AD5C14DE1C3185D4C4 /* libPods-devMasters-rnTemplateStage.a */; };
 		6544AD64E02DEAAA52688F19 /* libPods-devMasters-rnTemplate-rnTemplateTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 051D13D5F5BA2AE96E1EDE65 /* libPods-devMasters-rnTemplate-rnTemplateTests.a */; };
-		693E7D35CDE9B1681507D125 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
+		693E7D35CDE9B1681507D125 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		8CA1BDFB710CEF03CDA6E97A /* libPods-devMasters-rnTemplateDev.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C4E15A1C9DEC302B800A026B /* libPods-devMasters-rnTemplateDev.a */; };
 		C3EFD4C027140E829F95AE4D /* libPods-devMasters-rnTemplate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB78A19B601EF63A9CFFCDED /* libPods-devMasters-rnTemplate.a */; };
+		DFA638062C5C598300CC0824 /* rnTemplateLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFA638052C5C598300CC0824 /* rnTemplateLaunchScreen.storyboard */; };
+		DFA638072C5C598300CC0824 /* rnTemplateLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFA638052C5C598300CC0824 /* rnTemplateLaunchScreen.storyboard */; };
+		DFA638082C5C598300CC0824 /* rnTemplateLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFA638052C5C598300CC0824 /* rnTemplateLaunchScreen.storyboard */; };
 		DFE0798A2C59B603007AC66F /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		DFE0798B2C59B603007AC66F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		DFE0798F2C59B603007AC66F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
@@ -201,6 +204,7 @@
 		BAF8EA181D957C7412BE7080 /* Pods-devMasters-rnTemplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-devMasters-rnTemplate.debug.xcconfig"; path = "Target Support Files/Pods-devMasters-rnTemplate/Pods-devMasters-rnTemplate.debug.xcconfig"; sourceTree = "<group>"; };
 		BB78A19B601EF63A9CFFCDED /* libPods-devMasters-rnTemplate.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-devMasters-rnTemplate.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4E15A1C9DEC302B800A026B /* libPods-devMasters-rnTemplateDev.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-devMasters-rnTemplateDev.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFA638052C5C598300CC0824 /* rnTemplateLaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = rnTemplateLaunchScreen.storyboard; sourceTree = "<group>"; };
 		DFE079982C59B603007AC66F /* rnTemplateDev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rnTemplateDev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFE079992C59B603007AC66F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "/Users/b-gorelkin/Projects/DevMasters/react-native-template/template/ios/Info.plist"; sourceTree = "<absolute>"; };
 		DFE079AC2C5A4337007AC66F /* rnTemplateStage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rnTemplateStage.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -260,7 +264,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				693E7D35CDE9B1681507D125 /* BuildFile in Frameworks */,
+				693E7D35CDE9B1681507D125 /* (null) in Frameworks */,
 				C3EFD4C027140E829F95AE4D /* libPods-devMasters-rnTemplate.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -340,6 +344,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				DFA638052C5C598300CC0824 /* rnTemplateLaunchScreen.storyboard */,
 				DFE07BA32C5A52C7007AC66F /* Fonts */,
 				DFE0799A2C5A42E9007AC66F /* rnTemplateStage */,
 				DF9DA53A2C59B5AB00AFE9BF /* rnTemplateDev */,
@@ -639,6 +644,7 @@
 				DFE07A7D2C5A4D03007AC66F /* Fontisto.ttf in Resources */,
 				DFE07A802C5A4D03007AC66F /* Foundation.ttf in Resources */,
 				DFE07BAC2C5A52C7007AC66F /* EvilIcons.ttf in Resources */,
+				DFA638062C5C598300CC0824 /* rnTemplateLaunchScreen.storyboard in Resources */,
 				DFE07BDC2C5A52C7007AC66F /* MaterialCommunityIcons.ttf in Resources */,
 				DFE07A5C2C5A4D03007AC66F /* AntDesign.ttf in Resources */,
 				DFE07A8C2C5A4D03007AC66F /* Octicons.ttf in Resources */,
@@ -687,6 +693,7 @@
 				DFE07A7F2C5A4D03007AC66F /* Fontisto.ttf in Resources */,
 				DFE07A822C5A4D03007AC66F /* Foundation.ttf in Resources */,
 				DFE07BAE2C5A52C7007AC66F /* EvilIcons.ttf in Resources */,
+				DFA638082C5C598300CC0824 /* rnTemplateLaunchScreen.storyboard in Resources */,
 				DFE07BDE2C5A52C7007AC66F /* MaterialCommunityIcons.ttf in Resources */,
 				DFE07A5E2C5A4D03007AC66F /* AntDesign.ttf in Resources */,
 				DFE07A8E2C5A4D03007AC66F /* Octicons.ttf in Resources */,
@@ -735,6 +742,7 @@
 				DFE07A7E2C5A4D03007AC66F /* Fontisto.ttf in Resources */,
 				DFE07A812C5A4D03007AC66F /* Foundation.ttf in Resources */,
 				DFE07BAD2C5A52C7007AC66F /* EvilIcons.ttf in Resources */,
+				DFA638072C5C598300CC0824 /* rnTemplateLaunchScreen.storyboard in Resources */,
 				DFE07BDD2C5A52C7007AC66F /* MaterialCommunityIcons.ttf in Resources */,
 				DFE07A5D2C5A4D03007AC66F /* AntDesign.ttf in Resources */,
 				DFE07A8D2C5A4D03007AC66F /* Octicons.ttf in Resources */,
@@ -1252,10 +1260,7 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
@@ -1327,10 +1332,7 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
