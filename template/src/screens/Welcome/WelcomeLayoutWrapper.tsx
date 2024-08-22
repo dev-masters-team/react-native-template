@@ -1,30 +1,36 @@
 import React, { type ReactNode } from 'react'
 // import DeviceInfo from 'react-native-device-info'
-import { Text, View, Dimensions, Image, StyleSheet } from 'react-native'
-import { useThemeContext } from '../../utils/theme/ThemeProvider'
-import Logo from '../../../assets/logo.svg'
-
+import {
+  Text,
+  View,
+  Dimensions,
+  Image,
+  StyleSheet,
+  KeyboardAvoidingView,
+  Platform,
+} from 'react-native'
+import { useThemeContext } from '@theme/ThemeProvider'
+import Config from 'react-native-config'
 
 export default function WelcomeLayoutWrapper({ children }: { children: ReactNode }) {
   const { theme } = useThemeContext()
 
   return (
-    <View style={[styles.mainContainer, theme.primaryBackground]}>
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Logo width={150} height={150} preserveAspectRatio="none"/>
-        <View style={styles.titleContainer}>
-          <Text style={[theme.typography.h1, styles.titleFirstWord]}>Dev</Text>
-          <Text style={[theme.typography.h1, styles.titleSecondWord]}>Masters</Text>
-        </View>
-        {children}
-      </View>
-    </View>
+    <KeyboardAvoidingView
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      keyboardVerticalOffset={Platform.select({ ios: 180, android: 0 })}
+      style={[styles.mainContainer, theme.primaryBackground]}
+    >
+      {children}
+    </KeyboardAvoidingView>
   )
 }
 
 const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   titleContainer: {
     flexDirection: 'row',
@@ -37,9 +43,5 @@ const styles = StyleSheet.create({
   titleSecondWord: {
     fontFamily: 'Cocogoose-Bold',
     fontWeight: 'bold',
-  },
-  logo: {
-    height: 100,
-    marginBottom: -10,
   },
 })

@@ -23,9 +23,7 @@ const config = {
     assetExts: assetExts.filter((ext) => ext !== 'svg'),
     sourceExts: [...sourceExts, 'svg'],
   },
-  watchFolders: [
-    './src'
-  ],
+  watchFolders: ['./src'],
   server: {
     enhanceMiddleware: (middleware) => {
       return (req, res, next) => {

@@ -1,6 +1,6 @@
 import { ReactNode, createContext, useContext } from 'react'
 import { ThemeInterface, useThemeChangeListener } from './useThemeChangeListener'
-import { baseStyle } from './themes/baseStyle'
+import { baseTheme } from './themes/baseTheme'
 import { lightStyle } from './themes/lightTheme'
 import _ from 'lodash'
 
@@ -9,7 +9,7 @@ interface ThemeContextProps {
 }
 
 const ThemeContext = createContext<ThemeContextProps>({
-  theme: _.merge({}, baseStyle, lightStyle),
+  theme: _.merge({}, baseTheme, lightStyle),
 })
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {

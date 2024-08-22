@@ -7,12 +7,8 @@ import {
 } from '@reduxjs/toolkit'
 import { enableMapSet } from 'immer'
 import { persistReducer, persistStore } from 'redux-persist'
-import authReducer, {
-  initialState as authInitialState,
-} from './auth/authSlice'
-import appReducer, {
-  initialState as appInitialState,
-} from './appSlice'
+import authReducer, { initialState as authInitialState } from './auth/authSlice'
+import appReducer, { initialState as appInitialState } from './appSlice'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
 enableMapSet()

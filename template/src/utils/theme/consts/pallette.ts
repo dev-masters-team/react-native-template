@@ -1,39 +1,59 @@
+import tinycolor from 'tinycolor2'
+
+const COLOR_BASE = {
+  default: '#191A27',
+  primary: '#FFA902',
+  secondary: '#E2EAE8',
+  angry: '#C03403',
+  success: '#33cc33',
+  azure: '#35e4d6',
+}
+
 export const PALLETTE = {
-    neutral100: "#FFFFFF",
-    neutral200: "#F4F2F1",
-    neutral300: "#D7CEC9",
-    neutral400: "#B6ACA6",
-    neutral500: "#978F8A",
-    neutral600: "#564E4A",
-    neutral700: "#3C3836",
-    neutral800: "#191015",
-    neutral900: "#000000",
-  
-    primary100: "#F4E0D9",
-    primary200: "#E8C1B4",
-    primary300: "#DDA28E",
-    primary400: "#D28468",
-    primary500: "#C76542",
-    primary600: "#A54F31",
-  
-    secondary100: "#DCDDE9",
-    secondary200: "#BCC0D6",
-    secondary300: "#9196B9",
-    secondary400: "#626894",
-    secondary500: "#41476E",
-  
-    accent100: "#FFEED4",
-    accent200: "#FFE1B2",
-    accent300: "#FDD495",
-    accent400: "#FBC878",
-    accent500: "#FFBB50",
-  
-    angry100: "#F2D6CD",
-    angry500: "#C03403",
+  neutral100: '#ffffff',
+  neutral200: '#FBFBFB',
+  neutral300: '#f2f2f2',
+  neutral400: '#B6ACA6',
+  neutral500: '#978F8A',
+  neutral600: '#564E4A',
+  neutral700: '#191A27',
+  neutral800: '#191015',
+  neutral900: '#000000',
 
-    success500: '#33cc33',
+  default: COLOR_BASE.default,
 
-  
-    overlay20: "rgba(25, 16, 21, 0.2)",
-    overlay50: "rgba(25, 16, 21, 0.5)",
+  primary100: tinycolor(COLOR_BASE.primary).lighten(20).toString(),
+  primary200: tinycolor(COLOR_BASE.primary).lighten(10).toString(),
+  primary300: COLOR_BASE.primary,
+  primary400: tinycolor(COLOR_BASE.primary).darken(10).toString(),
+  primary500: tinycolor(COLOR_BASE.primary).darken(20).toString(),
+
+  secondary100: tinycolor(COLOR_BASE.secondary).lighten(20).toString(),
+  secondary200: tinycolor(COLOR_BASE.secondary).lighten(10).toString(),
+  secondary300: COLOR_BASE.secondary,
+  secondary400: tinycolor(COLOR_BASE.secondary).darken(10).toString(),
+  secondary500: tinycolor(COLOR_BASE.secondary).darken(20).toString(),
+
+  angry100: tinycolor(COLOR_BASE.angry).lighten(20).toString(),
+  angry200: tinycolor(COLOR_BASE.angry).lighten(10).toString(),
+  angry300: COLOR_BASE.angry,
+  angry400: tinycolor(COLOR_BASE.angry).darken(10).toString(),
+  angry500: tinycolor(COLOR_BASE.angry).darken(10).toString(),
+
+  success300: COLOR_BASE.angry,
+
+  overlay20: 'rgba(25, 16, 21, 0.2)',
+  overlay50: 'rgba(25, 16, 21, 0.5)',
+
+  azure: COLOR_BASE.azure,
+}
+
+function generateColorPalette(baseColor: string) {
+  return {
+    100: tinycolor(baseColor).lighten(20).toString(),
+    200: tinycolor(baseColor).lighten(10).toString(),
+    300: baseColor,
+    400: tinycolor(baseColor).darken(10).toString(),
+    500: tinycolor(baseColor).darken(20).toString(),
+  }
 }

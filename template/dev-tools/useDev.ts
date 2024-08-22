@@ -9,7 +9,7 @@ export function useDev(componentName: string = 'Component') {
   return {
     renderTimeMeasurement: () => useDevRenderTimeMeasurement(componentName),
     reRendering: () => useDevReRenderingConsole(componentName),
-    delay: (ms: number = 1000) => delay(ms)
+    delay: (ms: number = 1000) => delay(ms),
   }
 }
 
@@ -35,6 +35,6 @@ function useDevReRenderingConsole(componentName?: string) {
   })
 }
 
-function delay(ms: number){
-  return new Promise(resolve => setTimeout(resolve, ms)) 
+function delay(ms: number) {
+  return new Promise((resolve) => setTimeout(resolve, ms))
 }

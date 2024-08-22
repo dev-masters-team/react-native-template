@@ -2,6 +2,12 @@
   "extends": "@react-native/typescript-config/tsconfig.json",
   "compilerOptions": {
     "typeRoots": ["./src/utils/types", "node_modules/@types"],
-    "types": ["jest"]
+    "types": ["jest"],
+    "baseUrl": "./src",
+    "paths": {
+      "@custom-ui": ["utils/components/ui"],
+      "@utils/*": ["utils/*"],
+      "@theme/*": ["utils/theme/*"],
+    }
   }
 }

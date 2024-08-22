@@ -1,8 +1,8 @@
 export interface AuthResponseDTO {
-    jwt: string
+  jwt: string
 }
 
 export interface AuthDTO {
-    email: string
-    password: string
+  email: string
+  password: string
 }

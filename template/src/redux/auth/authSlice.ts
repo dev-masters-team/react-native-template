@@ -23,12 +23,13 @@ interface State extends User {
 export const initialState: Partial<State> = {}
 
 export const attemptAuth = createAsyncThunk<AuthResponseDTO, AuthDTO>(
-  'auth/attemptAuth', async (payload) => {
+  'auth/attemptAuth',
+  async (payload) => {
     console.log('attemptAuth:', payload)
     console.log('fake delay')
     //const response = await api
     await useDev().delay(2000)
-    return ({jwt: 'jwt token'})
+    return { jwt: 'jwt token' }
   },
 )
 
@@ -36,7 +37,7 @@ export const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
-    //to be used with google/facebook/apple etc... authentication 
+    //to be used with google/facebook/apple etc... authentication
     setJWT: (state, { payload }: PayloadAction<string | undefined>) => {
       // const user = jwtDecode<AuthenticatedJwtToken>(payload)
       return {
@@ -51,14 +52,11 @@ export const authSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(
-      attemptAuth.fulfilled,
-      (state, { payload }) => {
-        console.log('payload fulfilled:', payload)
-        return payload
-      },
-    )
-  }
+    builder.addCase(attemptAuth.fulfilled, (state, { payload }) => {
+      console.log('payload fulfilled:', payload)
+      return payload
+    })
+  },
 })
 
 export const { setJWT, logout } = authSlice.actions

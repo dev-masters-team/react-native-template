@@ -1,25 +1,25 @@
 import { useState, useEffect } from 'react'
 import { ColorSchemeName, Platform, StatusBar, useColorScheme } from 'react-native'
 import { useAppSelector } from '../hooks/reduxHooks'
-import { BaseStyleInterface, baseStyle } from './themes/baseStyle'
+import { BaseThemeInterface, baseTheme } from './themes/baseTheme'
 import { ThemeConfigInterface, lightStyle } from './themes/lightTheme'
 import { darkStyle } from './themes/darkTheme'
 import _ from 'lodash'
 import { THEME_ID } from '../../redux/appSlice'
 
-export type ThemeInterface = BaseStyleInterface & ThemeConfigInterface
+export type ThemeInterface = BaseThemeInterface & ThemeConfigInterface
 
 type DefinedThemes = Exclude<THEME_ID, THEME_ID.AS_DEVICE>
 const THEMES: { [key in DefinedThemes]: ThemeInterface } = {
-  [THEME_ID.DARK]: _.merge({}, baseStyle, darkStyle),
-  [THEME_ID.LIGHT]: _.merge({}, baseStyle, lightStyle),
+  [THEME_ID.DARK]: _.merge({}, baseTheme, darkStyle),
+  [THEME_ID.LIGHT]: _.merge({}, baseTheme, lightStyle),
 }
 
 export function useThemeChangeListener() {
   const { themeId: preferredThemeId } = useAppSelector((state) => state.app)
   const deviceTheme = useColorScheme()
   const [currentTheme, setCurrentTheme] = useState<ThemeInterface>(
-    _.merge({}, baseStyle, lightStyle),
+    _.merge({}, baseTheme, lightStyle),
   )
 
   const changeTheme = (themeId: DefinedThemes) => {

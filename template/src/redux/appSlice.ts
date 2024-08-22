@@ -2,7 +2,6 @@ import { createAsyncThunk, createSlice, type PayloadAction } from '@reduxjs/tool
 import { jwtDecode, JwtPayload } from 'jwt-decode'
 import Config from 'react-native-config'
 
-
 export enum THEME_ID {
   AS_DEVICE = 'AS_DEVICE',
   LIGHT = 'LIGHT',
@@ -23,10 +22,8 @@ export const updateLanguage = createAsyncThunk(
   async (payload: { lang: string }, { getState, dispatch }) => {
     // const { auth } = getState() as { auth: { jwt: string } }
     // if (!auth.jwt) return
-
   },
 )
-
 
 export const appSlice = createSlice({
   name: 'app',
@@ -36,11 +33,9 @@ export const appSlice = createSlice({
       state.themeId = payload
     },
   },
-  extraReducers: (builder) => {
-    
-  },
+  extraReducers: (builder) => {},
 })
 
-export const { } = appSlice.actions
+export const {} = appSlice.actions
 
 export default appSlice.reducer

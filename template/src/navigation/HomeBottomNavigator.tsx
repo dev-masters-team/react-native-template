@@ -1,17 +1,19 @@
-import {
-  createBottomTabNavigator
-} from '@react-navigation/bottom-tabs'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { ActivityIndicator, StyleSheet, Text, View } from 'react-native'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import { NavigationProp, ParamListBase, RouteProp } from '@react-navigation/native'
-import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context'
+import {
+  SafeAreaProvider,
+  SafeAreaView,
+  useSafeAreaInsets,
+} from 'react-native-safe-area-context'
 import Template, { TemplateProps } from '../screens/Template'
 import Settings from '../screens/Settings/Settings'
 import { objectEntries } from '../utils/typescriptTools'
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs'
-import { useThemeContext } from '../utils/theme/ThemeProvider'
+import { useThemeContext } from '@theme/ThemeProvider'
 
 type ParamList = {
   HomeTab: TemplateProps
@@ -51,7 +53,6 @@ const elements: TabElements = {
     component: Settings,
     label: 'Settings',
   },
-  
 }
 
 export default function HomeBottomNavigator() {
@@ -59,43 +60,44 @@ export default function HomeBottomNavigator() {
   const insets = useSafeAreaInsets()
 
   return (
+    <SafeAreaView style={[{ flex: 1 }, theme.primaryBackground]} edges={['top']}>
       <BottomStack.Navigator
         initialRouteName="HomeTab"
         tabBarPosition="bottom"
-        style={{
-          //paddingTop: insets.top,
-          paddingBottom: insets.bottom / 2,
-          paddingLeft: insets.left,
-          paddingRight: insets.right,
-        }}
+        sceneContainerStyle={[theme.primaryBackground]}
         screenOptions={({ route }) => ({
-          // tabBarStyle: [
-          //   theme.externalPackages.reactNativeScreens.topTabBarStyle,
-          // ],
-          tabBarStyle: [
-            theme.externalPackages.reactNativeScreens.topTabBarStyle,
-            // theme.borderWidthTransparent,
+          tabBarStyle: theme.primaryBackground,
+          tabBarContentContainerStyle: [
+            theme.primaryBackground,
+            {
+              borderRadius: 50,
+              margin: 10,
+            },
           ],
-          tabBarPressColor: 'transparent',
           tabBarIndicatorStyle: {
             backgroundColor: 'transparent',
           },
+          tabBarIndicatorContainerStyle: [
+            theme.secondaryBackground,
+            {
+              borderTopRightRadius: 50,
+              borderTopLeftRadius: 50,
+            },
+          ],
           tabBarLabel: ({ focused }) => (
-            <View style={styles.tabBar}>
-              <Text
-                allowFontScaling={false}
-                style={[styles.tabBarLabel, theme.typography.default]}
-              >
-                {elements[route.name].label}
-              </Text>
-            </View>
+            <Text
+              allowFontScaling={false}
+              style={[styles.tabBarLabel, theme.typography.default]}
+            >
+              {elements[route.name].label}
+            </Text>
           ),
           tabBarIcon: ({ focused }) => (
             <Ionicons
               name={
                 focused ? elements[route.name].iconFocused : elements[route.name].icon
               }
-              color={theme.colors.default.color}
+              color={theme.colors.default}
               size={25}
             />
           ),
@@ -110,16 +112,13 @@ export default function HomeBottomNavigator() {
           />
         ))}
       </BottomStack.Navigator>
+      <SafeAreaView style={[{ flex: 0 }, theme.secondaryBackground]} edges={['bottom']} />
+    </SafeAreaView>
   )
 }
 
 const styles = StyleSheet.create({
-  tabBar: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: 80,
-  },
   tabBarLabel: {
     fontSize: 12,
-  }
+  },
 })
